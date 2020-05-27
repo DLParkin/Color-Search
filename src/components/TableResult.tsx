@@ -1,0 +1,20 @@
+import React from "react";
+import { ColorCell } from "./ColorCell";
+import { Color } from "../_helpers/types";
+
+export const TableResult = (props: { item: Color }) => {
+  const item = props.item;
+  return (
+    <>
+      <tr>
+        <td style={{border: 'none'}}>
+          <ColorCell color={item.hex} />
+        </td>
+        <td>{item.color}</td>
+        <td>{item.hex.toUpperCase()}</td>
+        <td>{item.rgb}</td>
+        <td>{item.cmyk}</td>
+      </tr>
+    </>
+  );
+};
