@@ -1,5 +1,7 @@
 Color-Search 
 
+Demo: https://colorsearch.netlify.app/
+
 ## Requirements
  Colour search is done when users hit Enter on the input. The colour must be a valid CSS colour.
  Display results in a table containing Name, Hex code, RGB values, and CMYK values. 
