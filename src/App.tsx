@@ -13,7 +13,7 @@ function App() {
   const [showResults, setShowResults] = useState(false);
   const [notFound, setNotFound] = useState(false);
   const [failedFetch, setFailedFetch] = useState(false);
-  const [color, setColor] = useState("");
+  const [color, setColor] = useState("#");
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
