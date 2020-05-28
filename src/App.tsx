@@ -12,6 +12,7 @@ function App() {
   const [hasData, setHasdata] = useState(false);
   const [showResults, setShowResults] = useState(false);
   const [notFound, setNotFound] = useState(false);
+  const [failedFetch, setFailedFetch] = useState(false);
   const [color, setColor] = useState("");
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -42,15 +43,19 @@ function App() {
   useEffect(() => {
     if (!hasData) {
       const fetchData = async () => {
-        const result = await axios(
+        await axios(
           "https://raw.githubusercontent.com/dariusk/corpora/master/data/colors/xkcd.json"
-        );
+        )
+          .then((res) => {
+            if (res) {
+              setHasdata(true);
+            }
 
-        if (result) {
-          setHasdata(true);
-        }
-
-        setData(result.data);
+            setData(res.data);
+          })
+          .catch((error) => {
+            setFailedFetch(true);
+          });
       };
 
       fetchData();
@@ -90,6 +95,15 @@ function App() {
             style={{ margin: "2rem" }}
           >
             {`Sorry could not find ${color}, could try making it yourself?`}
+          </div>
+        )}
+        {failedFetch && (
+          <div
+            className="alert alert-danger"
+            role="alert"
+            style={{ margin: "2rem" }}
+          >
+            {`Failed to get data, please refresh the page and try again`}
           </div>
         )}
       </div>
