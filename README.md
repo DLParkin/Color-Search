@@ -14,6 +14,7 @@ Display 50 results Max, so if a colour chosen is later in the color scheme it wi
 No sumbit button added 
 Tests not included  
 Colors sorted by rgb is acceptable 
+Assume the only colors available are those from the XKCD.json file
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
