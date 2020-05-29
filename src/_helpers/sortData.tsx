@@ -8,7 +8,10 @@ export function sortData(data: any) {
 }
 
 export function getSimilarColors(data: any, index: string) {
-  const getSimilar = data.splice(index, (index + 49));
+  console.log(data)
+  console.log(index)
+  const getSimilar = data.splice(index, 50);
+  console.log(getSimilar)
   return getSimilar;
 }
 
