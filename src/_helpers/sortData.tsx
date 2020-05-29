@@ -51,5 +51,5 @@ function rgb2Cmyk(r: number, g: number, b: number) {
 // sort by this or by hex, either works
 // https://www.rapidtables.com/web/color/RGB_Color.html#rgb-format
 function sortColorCode(r: number, g: number, b: number) {
-  return r * 65536 + g * 256 + b;
+  return (r * 65536) + (g * 256) + b;
 }
