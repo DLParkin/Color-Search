@@ -1,13 +1,13 @@
 import { Color } from "./types";
 
-export function sortData(data: { colors: any; }) {
+export function sortData(data: any) {
   const sortedList = data.colors
     .map(getColorTypes)
     .sort((a: { id: number }, b: { id: number }) => a.id - b.id);
   return sortedList;
 }
 
-export function getSimilarColors(data: { splice: (arg0: string, arg1: string) => any; }, index: string) {
+export function getSimilarColors(data: any, index: string) {
   const getSimilar = data.splice(index, (index + 49));
   return getSimilar;
 }

@@ -2,12 +2,15 @@ import React from "react";
 import { ColorCell } from "./ColorCell";
 import { Color } from "../_helpers/types";
 
-export const TableResult = (props: { item: Color }) => {
-  const item = props.item;
+type IProps = {
+  item: Color;
+};
+
+export const TableResult: React.FC<IProps> = ({ item }) => {
   return (
     <>
       <tr>
-        <td style={{border: 'none'}}>
+        <td style={{ border: "none" }}>
           <ColorCell color={item.hex} />
         </td>
         <td>{item.color}</td>
